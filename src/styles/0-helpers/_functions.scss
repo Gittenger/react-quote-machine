@@ -6,3 +6,8 @@
     opacity: 1;
   }
 }
+
+//maintain rgb format for color vars
+@function rgb-format($color) {
+  @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})");
+}

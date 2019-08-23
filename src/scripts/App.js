@@ -28,11 +28,23 @@ async function displayQuote() {
 }
 
 const changeColor = () => {
+  const element = document.querySelector(".App");
+
   const colors = getColors();
   const index = Math.round(Math.random() * (colors.length - 1));
-  const color = colors[index];
+  const colorName = colors[index];
 
-  document.querySelector(".App").style.backgroundColor = `var(${color})`;
+  //use regex to get string of color name from css variable
+  let newColor = `${colorName}`.replace(/-/g, "");
+
+  if (element.dataset.color === newColor) {
+    changeColor();
+  } else {
+    element.dataset.color = newColor;
+    document
+      .querySelector(".App")
+      .style.setProperty("--appBackgroundColor", `var(${colorName})`);
+  }
 };
 
 const getColors = () => {
@@ -67,7 +79,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" data-color="red">
         <button onClick={updateDisplay}>Get another quote</button>
         <div id="quote-box">
           <p id="quote-text">

@@ -1,9 +1,9 @@
 :root {
-  --red: #{$custom-color-1};
-  --orange: #{$custom-color-2};
-  --gold: #{$custom-color-3};
-  --green: #{$custom-color-4};
-  --blue: #{$custom-color-5};
+  --red: #{rgb-format($custom-color-1)};
+  --orange: #{rgb-format($custom-color-2)};
+  --gold: #{rgb-format($custom-color-3)};
+  --green: #{rgb-format($custom-color-4)};
+  --blue: #{rgb-format($custom-color-5)};
 }
 
 body {
@@ -21,8 +21,12 @@ code {
 }
 
 .App {
+  //intial app bg-color
+  --appBackgroundColor: #{rgb-format($custom-color-1)};
+
   text-align: center;
 
-  background-color: $custom-color-1;
+  background-color: var(--appBackgroundColor);
+  transition: background-color 0.5s;
   animation: reveal 2s;
 }
