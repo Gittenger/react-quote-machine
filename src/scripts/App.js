@@ -81,7 +81,7 @@ class App extends React.Component {
     return (
       <div className="App" data-color="red">
         <button onClick={updateDisplay}>Get another quote</button>
-        <div id="quote-box">
+        <div id="quotes-container">
           <p id="quote-text">
             <span className="quote-box">
               {" "}
