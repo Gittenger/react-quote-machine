@@ -1,3 +1,11 @@
+:root {
+  --red: #{$custom-color-1};
+  --orange: #{$custom-color-2};
+  --gold: #{$custom-color-3};
+  --green: #{$custom-color-4};
+  --blue: #{$custom-color-5};
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -15,6 +23,6 @@ code {
 .App {
   text-align: center;
 
-  background-color: mistyrose;
+  background-color: $custom-color-1;
   animation: reveal 2s;
 }
