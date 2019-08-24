@@ -29,8 +29,7 @@ async function displayQuote() {
 
 const changeColor = () => {
   const element = document.querySelector(".App");
-
-  const colors = getColors();
+  const colors = getColors(); //returns array of css variables (color names)
   const index = Math.round(Math.random() * (colors.length - 1));
   const colorName = colors[index];
 
@@ -48,13 +47,26 @@ const changeColor = () => {
 };
 
 const getColors = () => {
-  //getting list of :root props from document.styleSheets...check cssRules prop if err
-  let helper = document.styleSheets[0].cssRules[1].style;
+  let sheets = document.styleSheets;
+  let rootStyles;
+
+  //for loop to locate :root styles
+  for (let i = 0; i < sheets.length; i++) {
+    for (let j = 0; j < sheets[i].cssRules.length; j++) {
+      if (sheets[i].cssRules[j].selectorText) {
+        //finding :root style rules if selectorText exists in rule declarations
+        if (sheets[i].cssRules[j].selectorText === ":root") {
+          rootStyles = sheets[i].cssRules[j].style;
+        }
+      }
+    }
+  }
 
   //filtering out css vars from :root styles
-  const colors = Array.from(helper).filter(prop => {
-    return prop.startsWith("--");
+  const colors = Array.from(rootStyles).filter(prop => {
+    return prop.startsWith("--color");
   });
+
   return colors;
 };
 

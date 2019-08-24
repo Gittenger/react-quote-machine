@@ -1,9 +1,9 @@
 :root {
-  --red: #{rgb-format($custom-color-1)};
-  --orange: #{rgb-format($custom-color-2)};
-  --gold: #{rgb-format($custom-color-3)};
-  --green: #{rgb-format($custom-color-4)};
-  --blue: #{rgb-format($custom-color-5)};
+  --color-red: #{rgb-format($custom-color-1)};
+  --color-orange: #{rgb-format($custom-color-2)};
+  --color-gold: #{rgb-format($custom-color-3)};
+  --color-green: #{rgb-format($custom-color-4)};
+  --color-blue: #{rgb-format($custom-color-5)};
 }
 
 body {
