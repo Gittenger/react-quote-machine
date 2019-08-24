@@ -86,7 +86,7 @@ const randNum = max => {
 
 class App extends React.Component {
   componentDidMount() {
-    displayQuote();
+    updateDisplay();
   }
 
   render() {
