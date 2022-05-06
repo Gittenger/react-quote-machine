@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-quote-machine/static/css/main.812b57ad.css",
+    "main.js": "/react-quote-machine/static/js/main.945c9821.js",
+    "index.html": "/react-quote-machine/index.html",
+    "main.812b57ad.css.map": "/react-quote-machine/static/css/main.812b57ad.css.map",
+    "main.945c9821.js.map": "/react-quote-machine/static/js/main.945c9821.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.812b57ad.css",
+    "static/js/main.945c9821.js"
+  ]
+}
